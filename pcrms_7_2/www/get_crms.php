@@ -29,33 +29,30 @@
 </head>
 
 <body>
-
-	<nav class="navbar py-1 navbar-expand-sm bg-light">
+    <nav class="navbar py-0 navbar-expand-sm bg-light fixed-top">
 		<a class="navbar-brand" href="">
 		<img src="/images/UNCC.png" class="rounded" alt="Logo" style="width:80px">
-
 		</a>
 		<ul class="nav nav-pills">
 		<li class="nav-item">
-			<a class="nav-link" href="index.php">Home</a>
+			<a class="nav-link" href="index.php"><i class="fa fa-home" style="font-size:20px"></i>Home</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link active" href="browse_dataset.php">Browse Database</a>
+			<a class="nav-link active" href="browse_dataset.php"><i class="fa fa-list-alt" style="font-size:20px"></i>Browse Database</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="detailed_search.php">Detailed Search</a>
+			<a class="nav-link" href="detailed_search.php"><i class="fa fa-search" style="font-size:20px"></i>Detailed Search</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="download_data.php">Download Data</a>
+			<a class="nav-link" href="download_data.php"><i class="fa fa-download" style="font-size:20px"></i>Download Data</a>
 		</li>
 
 		<li class="nav-item">
-			<a class="nav-link" href="https://sulab.uncc.edu/zhengchang-su-phd">Su Lab</a>
+			<a class="nav-link" href="https://sulab.uncc.edu/zhengchang-su-phd"><i class="fa fa-flask" style="font-size:20px"></i>Su Lab</a>
 		</li>
-
 		</ul>
+    </nav>
 
-  	</nav>
 
 
     <?php
@@ -150,7 +147,7 @@
                     <tr>
                         <th scope="col">CRM ID</th>
                         <th scope="col">CRM coordinates</th>
-                        <th scope="col">Bracketing Gene</th>
+                        <th scope="col">Closest Gene</th>
                         <th scope="col">Score</th>
                         <th scope="col">P value</th>
                     </tr>
@@ -176,7 +173,7 @@
                 <tr>
                     <th scope="col">CRM ID</th>
                     <th scope="col">CRM coordinates</th>
-                    <th scope="col">Bracketing Gene</th>
+                    <th scope="col">Closest Gene</th>
                     <th scope="col">Score</th>
                     <th scope="col">P value</th>
 

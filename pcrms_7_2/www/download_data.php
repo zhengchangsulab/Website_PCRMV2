@@ -39,7 +39,7 @@
  	</nav>
 
 
-    <div class="jumbotron py-6 bg-info mb-1 jumbotron-fluid"></div>
+	<div class="jumbotron py-6 bg-info mb-1 jumbotron-fluid"></div>
 
     <div class="container">
 

@@ -29,7 +29,7 @@
 
 <body>
 
-    <nav class="navbar py-1 navbar-expand-sm bg-light">
+    <nav class="navbar py-0 navbar-expand-sm bg-light fixed-top">
 		<a class="navbar-brand" href="">
 		<img src="/images/UNCC.png" class="rounded" alt="Logo" style="width:80px">
 
