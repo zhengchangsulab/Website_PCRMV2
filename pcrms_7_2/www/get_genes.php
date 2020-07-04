@@ -12,10 +12,10 @@
 <html lang="en">
 <head>
   <title>PCRMs</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
@@ -23,39 +23,71 @@
   <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
+
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
+
+
+    <style>
+        .dataTables_wrapper .dt-buttons {
+            float:none;  
+            text-align:center;
+            font-size: 14px;
+        }        
+    </style>
 
 </head>
 
 <body>
-
-    <nav class="navbar py-0 navbar-expand-sm bg-light fixed-top">
+	<nav class="navbar py-0 navbar-expand-sm bg-light fixed-top">
 		<a class="navbar-brand" href="">
 		<img src="/images/UNCC.png" class="rounded" alt="Logo" style="width:80px">
-
 		</a>
 		<ul class="nav nav-pills">
 		<li class="nav-item">
-			<a class="nav-link" href="index.php">Home</a>
+			<a class="nav-link" href="index.php"><i class="fa fa-home" style="font-size:20px"></i>Home</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="browse_dataset.php">Browse Database</a>
+			<a class="nav-link" href="browse_dataset.php"><i class="fa fa-list-alt" style="font-size:20px"></i>Browse Database</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link active" href="detailed_search.php">Detailed Search</a>
+			<a class="nav-link active" href="detailed_search.php"><i class="fa fa-search" style="font-size:20px"></i>Detailed Search</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="download_data.php">Download Data</a>
+			<a class="nav-link" href="download_data.php"><i class="fa fa-download" style="font-size:20px"></i>Download Data</a>
 		</li>
 
 		<li class="nav-item">
-			<a class="nav-link" href="https://sulab.uncc.edu/zhengchang-su-phd">Su Lab</a>
+			<a class="nav-link" href="https://sulab.uncc.edu/zhengchang-su-phd"><i class="fa fa-flask" style="font-size:20px"></i>Su Lab</a>
 		</li>
-
 		</ul>
-
   	</nav>
+
 
 	<div class="jumbotron py-6 bg-info mb-1 jumbotron-fluid"></div>
 	
@@ -204,29 +236,6 @@
 
 		<hr/>
 		
-		<div class="row mt-4">
-
-			<div class="col">
-				
-				<form action="get_genes.php" method='POST'>
-                    <!-- <div class='form-inline ml-auto row'> -->
-                    <div class='form-row align-items-center'>
-                        <label for="limit" class="col-4 mr-0 pr-0">Records per page:</label> 
-                        <select class='form-control col-8' name="limit" id="limit" onchange="this.form.submit()">
-                            <option value="-1">select records per page..</option>
-                            <option value="100">100</option>
-                            <option value="200">200</option>
-                            <option value="500">500</option>
-                            <option value="1000">1000</option>
-
-                        </select>
-
-                    </div>
-                </form>  
-
-			</div>
-		</div>
-
 		<div class="row">
 			<div class="col">
 				<table class="table table-striped table-bordered">
@@ -254,12 +263,41 @@
 					</tbody>
 				</table> 
 
-
 			</div>
 
 		</div>
 
 	</div>
+
+	<script>
+        // $(document).ready(function(){
+
+        //     $('#crms_table').dataTable({
+        //         "lengthMenu": [[ 100, 200, 500, 1000, -1], [100, 200, 500, 1000, "All"]],
+        //         "scrollY":        "1200px",
+        //         "scrollCollapse": true,
+        //         "dom": '<"wrapper"fltip>',
+        //     });
+        // });  
+        $(document).ready(function() {
+        $('#crms_table').DataTable( {
+            //dom: 'lfBrtip',
+            dom:"<'row'<'col-sm-12 col-md-2'l><'col-sm-12 col-md-4'B><'col-sm-12 col-md-6'f>>" +
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+            "lengthMenu": [[ 100, 200, 500, 1000, -1], [100, 200, 500, 1000, "All"]],
+            "scrollY":        "1200px",
+            "scrollCollapse": true,
+            buttons: [
+                {extend:'copy', text:'Copy'},
+                {extend:'csv', text:'CSV'},
+                'excel',
+
+            ],
+            select: true
+        } );
+        } ); 
+    </script>
 
 </body>
 

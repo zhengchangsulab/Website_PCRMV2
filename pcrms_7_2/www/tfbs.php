@@ -1,5 +1,4 @@
 <?php session_start();?>
-<?php include("pagination.php");?>
 <?php 
     $host = "localhost";
     $user = "drsulab";
@@ -12,10 +11,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>PCRMs</title>
+  <title>TFBSs</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<!-- 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>  
@@ -23,7 +22,42 @@
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
+
+
+    <style>
+        .dataTables_wrapper .dt-buttons {
+            float:none;  
+            text-align:center;
+            font-size: 14px;
+        }        
+    </style>
 
 
 </head>
@@ -84,7 +118,7 @@
     ?>
 
 
-	<div class="jumbotron py-6 bg-info mb-1 jumbotron-fluid py-3"></div>
+    <div class="jumbotron py-6 bg-info mb-1 jumbotron-fluid"></div>
 
     <div class="container">
             <div class="row">
@@ -92,7 +126,10 @@
                     <table class="display order-column compact" width="100%" id="tfbss_table">
                     <thead>
                         <tr>
-                            <th scope="col">TFBS Coordinate</th>
+
+                            <th scope="col">Chromosome</th>
+							<th scope="col">TFBS Start</th>
+							<th scope="col">TFBS End</th>
                             <th scope="col">Umotif ID</th>
                             <th scope="col">TF Binding Score</th>
                             <th scope="col">Umotif logo</th>
@@ -104,13 +141,15 @@
                             while($tfbs_row = $rs->fetch_assoc()){
                             //foreach($tfbs_results->data as $tfbs_row){
                                 echo "<tr>";
-                                echo "<td>{$chrome}:{$tfbs_row['TFBS_Start']}-{$tfbs_row['TFBS_End']}</td>";
+                                echo "<td style=\"text-align:center\" >{$chrome}</td>";
+                                echo "<td>{$tfbs_row['TFBS_Start']}</td>";
+                                echo "<td>{$tfbs_row['TFBS_End']}</td>";
                                 //echo "<th><a data-toggle=\"popover-hover\" data-img=\"/motifs_version/{$genome_id}/{$tfbs_row['umID']}.png\" href=umotif.php?umID={$tfbs_row['umID']}&genome_id={$genome_id}>{$tfbs_row['umID']}</a></th>";
                                 echo "<td>{$tfbs_row['umID']}</td>";
                                 echo "<td>{$tfbs_row['Binding_Score']}</td>";
                                 $img_path = "/motifs_version/{$genome_id}/{$tfbs_row['umID']}.png";
                                 echo "<td><img src=\"{$img_path}\" alt=\"\" border=3 height=50 width=150></img></td>";
-                                echo "<td style=\"word-wrap: break-word;min-width: 200px;max-width: 500px;\">{$tfbs_row['tfNames']}</td>";
+                                echo "<td style=\"word-wrap: break-word;min-width: 50px;max-width: 250px;\">{$tfbs_row['tfNames']}</td>";
                                 echo "</tr>";
                             }
 
@@ -120,7 +159,9 @@
 
                     <tfoot>
                         <tr>
-                            <th scope="col">TFBS Coordinate</th>
+                            <th scope="col">Chromosome</th>
+							<th scope="col">TFBS Start</th>
+							<th scope="col">TFBS End</th>
                             <th scope="col">Umotif ID</th>
                             <th scope="col">TF Binding Score</th>
                             <th scope="col">Umotif logo</th>
@@ -142,6 +183,7 @@
 
     <script>
                 // popovers initialization - on hover
+            /*
             $('[data-toggle="popover-hover"]').popover({
             html: true,
             trigger: 'hover',
@@ -155,12 +197,13 @@
             trigger: 'click',
             placement: 'top',
             content: function () { return '<img src="' + $(this).data('img') + '" style="width:100px;height:150px;">'; }
-            });
+            });*/
 
 
     </script>
 
     <script>
+        /*
         $(document).ready(function(){
 
             $('#tfbss_table').dataTable({
@@ -169,7 +212,25 @@
                 "scrollCollapse": true,
                 "dom": '<"wrapper"fltip>',
             });
-        });   
+        }); */
+        $(document).ready(function() {
+        $('#tfbss_table').DataTable( {
+            //dom: 'lfBrtip',
+            dom:"<'row'<'col-sm-12 col-md-4'l><'col-sm-12 col-md-4'B><'col-sm-12 col-md-4'f>>" +
+                "<'row'<'col-sm-12'tr>>" +
+                "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+            "lengthMenu": [[ 100, 200, 500, 1000, -1], [100, 200, 500, 1000, "All"]],
+            "scrollY":        "1200px",
+            "scrollCollapse": true,
+            buttons: [
+                {extend:'copy', text:'Copy'},
+                {extend:'csv', text:'CSV'},
+                'excel',
+
+            ],
+            select: true
+        } );
+        } );   
     </script>
 
 </body>
